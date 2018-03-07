@@ -61,6 +61,11 @@ public class AScreen {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, context.getResources().getDisplayMetrics());
     }
 
+    public static int getPx(Context context, int value, int unit)
+    {
+        return (int) TypedValue.applyDimension(unit, value, context.getResources().getDisplayMetrics());
+    }
+
     public static int getDimension(Context context, int id)
     {
         return context.getResources().getDimensionPixelSize(id);
