@@ -16,20 +16,25 @@
 
 package com.jompon.ascreen;
 
-import android.app.Activity;
 import android.content.Context;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 
 public class AScreen {
 
-    private Activity activity;
+    private static AScreen aScreen;
+    private Context context;
     private DisplayMetrics displaymetrics;
-    public AScreen(Activity activity)
+    public AScreen(Context context)
     {
-        this.activity = activity;
-        displaymetrics = new DisplayMetrics();
-        activity.getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
+        this.context = context;
+        displaymetrics = context.getResources().getDisplayMetrics();
+    }
+
+    public static synchronized AScreen getInstance(Context context)
+    {
+        if( aScreen == null )   aScreen = new AScreen(context);
+        return aScreen;
     }
 
     public int getScreenWidth( )
@@ -49,9 +54,9 @@ public class AScreen {
 
     public int getStatusBarHeight() {
         int result = 0;
-        int resourceId = activity.getResources().getIdentifier("status_bar_height", "dimen", "android");
+        int resourceId = context.getResources().getIdentifier("status_bar_height", "dimen", "android");
         if (resourceId > 0) {
-            result = activity.getResources().getDimensionPixelSize(resourceId);
+            result = context.getResources().getDimensionPixelSize(resourceId);
         }
         return result;
     }
