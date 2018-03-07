@@ -32,19 +32,19 @@ public class AScreen {
         activity.getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
     }
 
-    public int getWidth( )
+    public int getScreenWidth( )
     {
         return displaymetrics.widthPixels;
     }
 
-    public int getHeight( )
+    public int getScreenHeight( )
     {
         return displaymetrics.heightPixels;
     }
 
-    public int getMinSize( )
+    public int getScreenMinSize( )
     {
-        return (getWidth() > getHeight())? getHeight(): getWidth();
+        return (getScreenWidth() > getScreenHeight())? getScreenHeight(): getScreenWidth();
     }
 
     public int getStatusBarHeight() {
