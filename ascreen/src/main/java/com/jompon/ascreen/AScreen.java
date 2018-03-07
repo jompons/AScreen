@@ -28,7 +28,7 @@ public class AScreen {
     public AScreen(Context context)
     {
         this.context = context;
-        displaymetrics = context.getResources().getDisplayMetrics();
+        this.displaymetrics = context.getResources().getDisplayMetrics();
     }
 
     public static synchronized AScreen getInstance(Context context)
@@ -61,17 +61,17 @@ public class AScreen {
         return result;
     }
 
-    public static int getPx(Context context, int dp)
+    public int getPx(int dp)
     {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, context.getResources().getDisplayMetrics());
     }
 
-    public static int getPx(Context context, int value, int unit)
+    public int getPx(int value, int unit)
     {
         return (int) TypedValue.applyDimension(unit, value, context.getResources().getDisplayMetrics());
     }
 
-    public static int getDimension(Context context, int id)
+    public int getDimension(int id)
     {
         return context.getResources().getDimensionPixelSize(id);
     }

@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">AScreen</string>
 
+    <string name="margin">Margin:&#160;</string>
     <string name="screen_width">Screen Width:&#160;</string>
     <string name="screen_height">Screen Height:&#160;</string>
     <string name="status_bar_height">Status bar height:&#160;</string>

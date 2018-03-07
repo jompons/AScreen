@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView txtScreenWidth;
     private TextView txtScreenHeight;
     private TextView txtStatusBarHeight;
+    private TextView txtMargin;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         txtScreenWidth = (TextView) findViewById(R.id.txt_screen_width);
         txtScreenHeight = (TextView) findViewById(R.id.txt_screen_height);
         txtStatusBarHeight = (TextView) findViewById(R.id.txt_status_bar_height);
+        txtMargin = (TextView) findViewById(R.id.txt_margin);
     }
 
     private void bindingData( )
@@ -52,5 +54,6 @@ public class MainActivity extends AppCompatActivity {
         txtScreenWidth.append(AScreen.getInstance(this).getScreenWidth()+" px");
         txtScreenHeight.append(AScreen.getInstance(this).getScreenHeight()+" px");
         txtStatusBarHeight.append(AScreen.getInstance(this).getStatusBarHeight()+" px");
+        txtMargin.append(AScreen.getInstance(this).getDimension(R.dimen.activity_horizontal_margin)+" px");
     }
 }

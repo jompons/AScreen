@@ -25,4 +25,9 @@
         android:layout_height="wrap_content"
         android:text="@string/status_bar_height"/>
 
+    <TextView
+        android:id="@+id/txt_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/margin"/>
 </LinearLayout>
